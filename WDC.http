@@ -1,6 +1,0 @@
-@WDC_HostAddress = http://localhost:5005
-
-GET {{WDC_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
