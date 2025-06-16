@@ -1,4 +1,3 @@
-// Products.Infrastructure/Data/BookstoreContext.cs
 using Microsoft.EntityFrameworkCore;
 using Products.Domain.Entities;
 
@@ -10,4 +9,12 @@ public class BookstoreContext : DbContext
         : base(options) { }
 
     public DbSet<Book> Books => Set<Book>();
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        // PostgreSQL-specific configurations if needed
+        modelBuilder.Entity<Book>()
+            .Property(b => b.Price)
+            .HasColumnType("decimal(18,2)");
+    }
 }
