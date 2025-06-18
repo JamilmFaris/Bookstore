@@ -3,4 +3,4 @@ using Products.Application.DTOs;
 
 namespace Products.Application.Queries;
 
-public class GetBooksListQuery : IRequest<IEnumerable<BookDto>> { }
+public record GetBooksListQuery : IRequest<IEnumerable<BookDto>>;

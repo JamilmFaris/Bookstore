@@ -7,3 +7,11 @@ public enum BookStatus
     OutOfStock,
     Discontinued
 }
+
+public enum BookCategory
+{
+    eBook,
+    audioBook,
+    Paperback,
+    Hardcover
+}

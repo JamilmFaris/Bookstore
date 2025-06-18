@@ -1,10 +1,9 @@
+// Products.Application/Handlers/GetBooksListQueryHandler.cs
 using AutoMapper;
 using MediatR;
 using Products.Application.DTOs;
 using Products.Application.Queries;
 using Products.Domain.Interfaces;
-
-namespace Products.Application.Handlers;
 
 public class GetBooksListQueryHandler : IRequestHandler<GetBooksListQuery, IEnumerable<BookDto>>
 {
@@ -17,7 +16,9 @@ public class GetBooksListQueryHandler : IRequestHandler<GetBooksListQuery, IEnum
         _mapper = mapper;
     }
 
-    public async Task<IEnumerable<BookDto>> Handle(GetBooksListQuery request, CancellationToken cancellationToken)
+    public async Task<IEnumerable<BookDto>> Handle(
+        GetBooksListQuery request, 
+        CancellationToken ct)
     {
         var books = await _repository.GetAllAsync();
         return _mapper.Map<IEnumerable<BookDto>>(books);

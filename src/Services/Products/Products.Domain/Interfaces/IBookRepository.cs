@@ -1,4 +1,4 @@
-// Products.Domain/Interfaces/IBookRepositoryl.cs
+// Products.Domain/Interfaces/IBookRepository.cs
 using Products.Domain.Entities;
 
 namespace Products.Domain.Interfaces;
