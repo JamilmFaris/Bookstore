@@ -60,8 +60,8 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         {
             ValidateIssuerSigningKey = true,
             IssuerSigningKey = new SymmetricSecurityKey(key),
-            ValidateIssuer = false,    // Must match Users service
-            ValidateAudience = false   // Must match Users service
+            ValidateIssuer = false,    
+            ValidateAudience = false   
         };
     });
 
