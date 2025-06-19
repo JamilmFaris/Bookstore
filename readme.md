@@ -12,9 +12,11 @@
 # Create databases and user (run as postgres user)
 psql -U postgres -c "CREATE DATABASE BookstoreProducts;"
 psql -U postgres -c "CREATE DATABASE BookstoreUsers;"
+psql -U postgres -c "CREATE DATABASE BookstoreOrders;"
 psql -U postgres -c "CREATE USER myuser WITH PASSWORD 'password' SUPERUSER;"
 psql -U postgres -c "GRANT ALL PRIVILEGES ON DATABASE BookstoreProducts TO myuser;"
 psql -U postgres -c "GRANT ALL PRIVILEGES ON DATABASE BookstoreUsers TO myuser;"
+psql -U postgres -c "GRANT ALL PRIVILEGES ON DATABASE BookstoreOrders TO myuser;"
 ```
 ### 🚀 Service Startup Order
 Run in separate terminals:
@@ -51,3 +53,4 @@ dotnet run
 |----------|------|----------------------------------------|
 | Users    | 5001 | http://localhost:5001/swagger          |
 | Products | 5008 | http://localhost:5008/swagger          |
+| Orders   | 5003 | http://localhost:5003/swagger          |
