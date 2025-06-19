@@ -20,16 +20,28 @@ psql -U postgres -c "GRANT ALL PRIVILEGES ON DATABASE BookstoreUsers TO myuser;"
 Run in separate terminals:
 1. Users Service (Auth)
 ```bash
-cd src/Services/Users/Users.API/
+cd .\src\Services\Users\Users.API\
 dotnet ef migrations add InitialCreate --project ../Users.Infrastructure
 dotnet ef database update
 dotnet run
 ```
 2. Products Service
 ```bash
-cd src/Services/Products/Products.API/
+cd .\src\Services\Orders\Orders.API\Products\Products.API\
 dotnet ef migrations add InitialCreate --project ../Products.Infrastructure
 dotnet ef database update
+dotnet run
+```
+
+3. Orders Service
+```powershell
+cd .\src\Services\Orders\Orders.API\
+
+# First-time setup (run once)
+dotnet ef migrations add InitialCreate --project ../Orders.Infrastructure
+dotnet ef database update
+
+# Run the service
 dotnet run
 ```
 
@@ -37,5 +49,5 @@ dotnet run
 
 | Service  | Port | Swagger URL                           |
 |----------|------|----------------------------------------|
-| Users    | 5000 | http://localhost:5000/swagger          |
-| Products | 5001 | http://localhost:5001/swagger          |
+| Users    | 5001 | http://localhost:5001/swagger          |
+| Products | 5008 | http://localhost:5008/swagger          |
