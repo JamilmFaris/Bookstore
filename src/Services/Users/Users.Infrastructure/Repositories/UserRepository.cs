@@ -3,7 +3,8 @@ using System.Threading.Tasks;
 using Users.Domain.Entities;
 using Users.Domain.Interfaces;
 using Users.Infrastructure.Data;
-
+using System;
+using System.Collections.Generic;
 namespace Users.Infrastructure.Repositories;
 
 public class UserRepository : IUserRepository
